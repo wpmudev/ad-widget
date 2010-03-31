@@ -1,0 +1,16 @@
+Plugin Name: Ad widget lite
+Author: Barry Getty
+
+Instructions WP:
+----------------------------------------------------------------------
+1) Place the adwidget-lite.php file in the plugins directory
+2) Activate the plugin
+
+Instructions WPMU:
+----------------------------------------------------------------------
+1) Place the adwidget-lite.php file in the mu-plugins directory
+
+Options:
+----------------------------------------------------------------------
+If you want to allow PHP code within the Widget - uncomment line 30
+If you want the widget to be only usable to supporters, uncomment line 31

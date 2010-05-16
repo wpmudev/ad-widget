@@ -33,6 +33,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 class adlitewidget extends WP_Widget {
 
 	function adlitewidget() {
+
+		// Load the text-domain
+		$locale = apply_filters( 'adlitewidget_locale', get_locale() );
+		$mofile = dirname(__FILE__) . "/adlitewidget-$locale.mo";
+
+		if ( file_exists( $mofile ) )
+			load_textdomain( 'adlitewidget', $mofile );
+
 		$widget_ops = array( 'classname' => 'adlitewidget', 'description' => __('Display HTML selectively based on simple rules', 'adlitewidget') );
 		$control_ops = array('width' => 400, 'height' => 350, 'id_base' => 'adlitewidget');
 		$this->WP_Widget( 'adlitewidget', __('AD lite Widget', 'adlitewidget'), $widget_ops, $control_ops );

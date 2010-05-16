@@ -3,8 +3,8 @@
 Plugin Name: Ad widget lite
 Plugin URI: http://incsub.com
 Description: This plugin adds a simple advertisement widget with customisable display options.
-Author: Barry Getty
-Version: 1.0
+Author: Barry
+Version: 2.0
 Author URI: http://caffeinatedb.com
 WDP ID: 85
 */

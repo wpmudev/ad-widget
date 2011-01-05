@@ -4,7 +4,7 @@ Plugin Name: Ad widget lite
 Plugin URI: http://incsub.com
 Description: This plugin adds a simple advertisement widget with customisable display options.
 Author: Barry
-Version: 2.0
+Version: 2.1
 Author URI: http://caffeinatedb.com
 WDP ID: 85
 */
@@ -36,7 +36,7 @@ class adlitewidget extends WP_Widget {
 
 		// Load the text-domain
 		$locale = apply_filters( 'adlitewidget_locale', get_locale() );
-		$mofile = dirname(__FILE__) . "/adlitewidget-$locale.mo";
+		$mofile = dirname(__FILE__) . "/languages/adlitewidget-$locale.mo";
 
 		if ( file_exists( $mofile ) )
 			load_textdomain( 'adlitewidget', $mofile );

@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Ad widget lite
+Plugin Name: Ad widget
 Plugin URI: http://incsub.com
 Description: This plugin adds a simple advertisement widget with customisable display options.
 Author: Barry

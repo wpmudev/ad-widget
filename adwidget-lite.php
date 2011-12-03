@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Ad widget
-Plugin URI: http://incsub.com
+Plugin URI: http://premium.wpmudev.org/project/ad-widget
 Description: This plugin adds a simple advertisement widget with customisable display options.
 Author: Barry
-Version: 2.1
+Version: 2.1.1
 Author URI: http://caffeinatedb.com
 WDP ID: 85
 */
@@ -49,7 +49,7 @@ class adlitewidget extends WP_Widget {
 	function is_fromsearchengine() {
 		$ref = $_SERVER['HTTP_REFERER'];
 
-		$SE = array('/search?', 'images.google.', 'web.info.com', 'search.', 'del.icio.us/search', 'soso.com', '/search/', '.yahoo.' );
+		$SE = array('/search?', '.google.', 'web.info.com', 'search.', 'del.icio.us/search', 'soso.com', '/search/', '.yahoo.', '.bing.' );
 
 		foreach ($SE as $url) {
 			if (strpos($ref,$url)!==false) return true;

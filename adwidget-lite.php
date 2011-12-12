@@ -4,7 +4,7 @@ Plugin Name: Ad widget
 Plugin URI: http://premium.wpmudev.org/project/ad-widget
 Description: This plugin adds a simple advertisement widget with customisable display options.
 Author: Barry
-Version: 2.1.1
+Version: 2.1.2
 Author URI: http://caffeinatedb.com
 WDP ID: 85
 */
@@ -223,7 +223,7 @@ class adlitewidget extends WP_Widget {
 								"isie"		=>	__("User is using Internet Explorer",'adlitewidget')
 								);
 
-		if(function_exists('is_supporter')) {
+		if(function_exists('is_supporter') && is_super_admin()) {
 			$selections['notsupporter'] = __("User isn't a supporter",'adlitewidget');
 		}
 
@@ -254,7 +254,7 @@ class adlitewidget extends WP_Widget {
 }
 
 function adlitewidget_register() {
-	if(defined('ADLITE_SUPPORTERONLY') && function_exists('is_supporter')) {
+	if(defined('ADLITE_SUPPORTERONLY') && function_exists('is_supporter') && is_supporter()) {
 		register_widget( 'adlitewidget' );
 	} elseif(!defined('ADLITE_SUPPORTERONLY')) {
 		register_widget( 'adlitewidget' );

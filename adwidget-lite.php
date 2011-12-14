@@ -4,7 +4,7 @@ Plugin Name: Ad widget
 Plugin URI: http://premium.wpmudev.org/project/ad-widget
 Description: This plugin adds a simple advertisement widget with customisable display options.
 Author: Barry
-Version: 2.1.2
+Version: 2.2
 Author URI: http://caffeinatedb.com
 WDP ID: 85
 */
@@ -111,8 +111,12 @@ class adlitewidget extends WP_Widget {
 										break;
 
 					case 'none':		break;
-					default:
-										return true;
+
+					default:			if(has_filter('adwidget_process_rule_' . $key)) {
+											if(apply_filters( 'adwidget_process_rule_' . $key, false )) {
+												return true;
+											}
+										}
 				}
 			}
 			// Passed everything without a true so return false
@@ -137,6 +141,8 @@ class adlitewidget extends WP_Widget {
 			'isie'			=> '0',
 			'notsupporter'	=> '0'
 		);
+
+		$options = apply_filters('adwidget_additional_checks', $options);
 
 		foreach($options as $key => $value) {
 			if(isset($instance[$key])) {
@@ -185,6 +191,8 @@ class adlitewidget extends WP_Widget {
 			'notsupporter'	=> '0'
 		);
 
+		$defaults = apply_filters('adwidget_additional_defaults', $defaults);
+
 		foreach ( $defaults as $key => $val ) {
 			$instance[$key] = $new_instance[$key];
 		}
@@ -212,6 +220,9 @@ class adlitewidget extends WP_Widget {
 			'isie'			=> '0',
 			'notsupporter'	=> '0'
 		);
+
+		$defaults = apply_filters('adwidget_additional_defaults', $defaults);
+
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
 		$selections = array(
@@ -226,6 +237,8 @@ class adlitewidget extends WP_Widget {
 		if(function_exists('is_supporter') && is_super_admin()) {
 			$selections['notsupporter'] = __("User isn't a supporter",'adlitewidget');
 		}
+
+		$selections = apply_filters('adwidget_additional_rules', $selections);
 
 		?>
 			<p>

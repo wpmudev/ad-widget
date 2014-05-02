@@ -1,16 +1,18 @@
 <?php
 /*
 Plugin Name: Ad widget
-Plugin URI: http://premium.wpmudev.org/project/ad-widget
+Plugin URI: https://premium.wpmudev.org/project/ad-widget/
 Description: This plugin adds a simple advertisement widget with customisable display options.
-Author: Barry
+Author: WPMU DEV
 Version: 2.2
 Author URI: http://caffeinatedb.com
 WDP ID: 85
 */
 
 /*
-Copyright 2007-2009 Incsub (http://incsub.com)
+Copyright 2009-2014 Incsub (http://incsub.com)
+Author - Barry Getty
+Contributors - 
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License (Version 2 - GPLv2) as published by
